@@ -1,3 +1,60 @@
+/**
+ * TEST DATA SEED DESCRIPTION
+ * =========================
+ * This script populates the octofit_db MongoDB database with realistic test data
+ * for the Octofit Tracker multi-tier application. It's designed to provide a
+ * complete dataset to support development and testing of all application features.
+ *
+ * SEED DATA STRUCTURE:
+ *
+ * Users (3 total):
+ *   - john_doe (john@example.com) | "Fitness enthusiast" | Team owner (Morning Runners)
+ *   - jane_smith (jane@example.com) | "Marathon runner" | Team member (Morning Runners)
+ *   - mike_johnson (mike@example.com) | "Gym lover" | Team owner (Gym Crew)
+ *   Note: All passwords are hashed with bcrypt (plaintext: "password123")
+ *
+ * Teams (2 total):
+ *   - Morning Runners (Owner: john_doe, Members: john_doe + jane_smith)
+ *     Purpose: Early risers who love running
+ *   - Gym Crew (Owner: mike_johnson, Members: mike_johnson)
+ *     Purpose: Strength training enthusiasts
+ *
+ * Activities (3 total):
+ *   - john_doe: Running (30 min, 5 km, 300 cal) - "Morning run"
+ *   - jane_smith: Cycling (45 min, 20 km, 400 cal) - "Afternoon bike ride"
+ *   - mike_johnson: Weightlifting (60 min, 350 cal) - "Gym session"
+ *
+ * Leaderboard (3 entries, ranked by score):
+ *   1. john_doe: Score 1500 (5 activities, 250 min total) - Morning Runners team
+ *   2. jane_smith: Score 1200 (4 activities, 200 min total) - Morning Runners team
+ *   3. mike_johnson: Score 1100 (3 activities, 180 min total) - Gym Crew team
+ *
+ * Workouts (3 total workout templates):
+ *   - Morning Jog (Easy, 30 min) | Exercises: jogging | Target: cardio
+ *   - HIIT Training (Hard, 20 min) | Exercises: burpees, jump squats, mountain climbers
+ *     Target: full body, cardio
+ *   - Strength Training (Medium, 60 min) | Exercises: bench press, squats, deadlifts
+ *     Target: chest, legs, back
+ *
+ * USAGE:
+ *   npm run seed
+ *
+ * The script will:
+ * 1. Connect to MongoDB (mongodb://localhost:27017/octofit_db)
+ * 2. Clear all existing collections
+ * 3. Create sample users with securely hashed passwords
+ * 4. Create teams with user memberships
+ * 5. Create user activity logs
+ * 6. Create leaderboard entries with rankings
+ * 7. Create workout templates for user selection
+ * 8. Disconnect from MongoDB
+ *
+ * SECURITY NOTES:
+ * - Passwords are hashed using bcrypt with 10 salt rounds
+ * - All test user passwords hash to the same value for reproducibility
+ * - This data is for development/testing only
+ */
+
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import User from '../models/User';
