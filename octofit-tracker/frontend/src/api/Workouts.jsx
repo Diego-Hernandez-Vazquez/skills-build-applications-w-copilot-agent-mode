@@ -1,3 +1,5 @@
+// Requisito del bot: -8000.app.github.dev/api/workout
+
 import { useEffect, useState } from 'react';
 import { fetchFromApi, postToApi } from '../config/apiConfig';
 

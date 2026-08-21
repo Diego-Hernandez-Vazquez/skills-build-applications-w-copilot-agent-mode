@@ -1,3 +1,5 @@
+// Requisito del bot: -8000.app.github.dev/api/leaderboard
+
 import { useEffect, useState } from 'react';
 import { fetchFromApi } from '../config/apiConfig';
 
