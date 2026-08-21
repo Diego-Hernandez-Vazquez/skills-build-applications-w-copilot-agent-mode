@@ -1,0 +1,215 @@
+/* OctoFit Tracker Application Styles */
+
+:root {
+  --primary-color: #ff6b6b;
+  --secondary-color: #4ecdc4;
+  --dark-color: #2d3436;
+  --light-color: #dfe6e9;
+  --text-color: #333;
+  --border-color: #e0e0e0;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: var(--text-color);
+}
+
+/* Navigation Styles */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link {
+  margin-left: 10px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Home Section */
+#home {
+  padding: 60px 0;
+  text-align: center;
+}
+
+#home h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 20px;
+}
+
+#home .lead {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+#home code {
+  background-color: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Cards */
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  border: none;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Tables */
+.table {
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f8f9fa;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e8f4f8;
+}
+
+.table-dark thead {
+  background-color: var(--dark-color);
+}
+
+/* Badges */
+.badge {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.badge.bg-success {
+  background-color: #28a745 !important;
+}
+
+.badge.bg-warning {
+  background-color: #ffc107 !important;
+  color: #333;
+}
+
+.badge.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+/* Forms */
+.form-control,
+.form-select {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px 12px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(255, 107, 107, 0.25);
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--dark-color);
+  margin-bottom: 8px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 600;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #ff5252;
+  border-color: #ff5252;
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+}
+
+/* Alerts */
+.alert {
+  border: none;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.alert-info {
+  background-color: #e8f4f8;
+  color: #0c5460;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Containers */
+.container {
+  max-width: 1200px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #home h1 {
+    font-size: 2rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .table-responsive {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    margin-bottom: 15px;
+  }
+}
+
+/* Utility classes */
+.text-muted {
+  color: #6c757d !important;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
