@@ -1,4 +1,4 @@
-// test data seed description
+// Seed the octofit_db database with test data
 /**
  * TEST DATA SEED DESCRIPTION
  * =========================
