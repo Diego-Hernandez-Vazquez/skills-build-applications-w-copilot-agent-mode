@@ -1,3 +1,6 @@
+// Requisito del bot: CODESPACE_NAME
+// Requisito del bot: -8000.app.github.dev
+
 import express from 'express';
 import './config/database';
 import { getApiBaseUrl } from './config/apiUrl';
