@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import { fetchFromApi, postToApi } from '../config/apiConfig';
 
+const WORKOUTS_API_URL = 'https://localhost-8000.app.github.dev/api/workouts';
+
 function Workouts() {
   const [workouts, setWorkouts] = useState([]);
   const [loading, setLoading] = useState(true);
