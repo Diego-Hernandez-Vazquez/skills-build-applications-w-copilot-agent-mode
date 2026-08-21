@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
 import User from '../models/User';
 import Team from '../models/Team';
 import Activity from '../models/Activity';
@@ -20,26 +21,29 @@ async function seedDatabase() {
     await Workout.deleteMany({});
     console.log('Cleared existing data');
 
+    // Hash passwords for test users
+    const hashedPassword = await bcrypt.hash('password123', 10);
+
     // Create sample users
     const users = await User.insertMany([
       {
         username: 'john_doe',
         email: 'john@example.com',
-        password: 'password123',
+        password: hashedPassword,
         displayName: 'John Doe',
         bio: 'Fitness enthusiast',
       },
       {
         username: 'jane_smith',
         email: 'jane@example.com',
-        password: 'password123',
+        password: hashedPassword,
         displayName: 'Jane Smith',
         bio: 'Marathon runner',
       },
       {
         username: 'mike_johnson',
         email: 'mike@example.com',
-        password: 'password123',
+        password: hashedPassword,
         displayName: 'Mike Johnson',
         bio: 'Gym lover',
       },

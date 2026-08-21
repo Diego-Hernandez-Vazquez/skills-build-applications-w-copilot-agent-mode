@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
+const bcrypt_1 = __importDefault(require("bcrypt"));
 const User_1 = __importDefault(require("../models/User"));
 const Team_1 = __importDefault(require("../models/Team"));
 const Activity_1 = __importDefault(require("../models/Activity"));
@@ -21,26 +22,28 @@ async function seedDatabase() {
         await Leaderboard_1.default.deleteMany({});
         await Workout_1.default.deleteMany({});
         console.log('Cleared existing data');
+        // Hash passwords for test users
+        const hashedPassword = await bcrypt_1.default.hash('password123', 10);
         // Create sample users
         const users = await User_1.default.insertMany([
             {
                 username: 'john_doe',
                 email: 'john@example.com',
-                password: 'password123',
+                password: hashedPassword,
                 displayName: 'John Doe',
                 bio: 'Fitness enthusiast',
             },
             {
                 username: 'jane_smith',
                 email: 'jane@example.com',
-                password: 'password123',
+                password: hashedPassword,
                 displayName: 'Jane Smith',
                 bio: 'Marathon runner',
             },
             {
                 username: 'mike_johnson',
                 email: 'mike@example.com',
-                password: 'password123',
+                password: hashedPassword,
                 displayName: 'Mike Johnson',
                 bio: 'Gym lover',
             },
